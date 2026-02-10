@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Băneasa vs Mega Mall | Гид по шопингу</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mall-badge-baneasa {
+            background: #eab308;
+            color: #000;
+        }
+
+        .mall-badge-mega {
+            background: #ef4444;
+            color: #fff;
+        }
+
+        #protected-content {
+            display: none;
+        }
+
+        #login-screen {
+            display: flex;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Password Protection Screen -->
+    <div id="login-screen" class="fixed inset-0 z-50 gradient-bg items-center justify-center px-4">
+        <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md text-center">
+            <div class="mb-6">
+                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-lock text-blue-600 text-2xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800">האתר מוגן בסיסמה</h2>
+                <p class="text-gray-500 mt-2">אנא הזן את הסיסמה כדי לצפות בתוכן</p>
+            </div>
+            <div class="space-y-4">
+                <input type="password" id="password-input" 
+                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" 
+                       placeholder="הזן סיסמה...">
+                <button onclick="checkPassword()" 
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition duration-200">
+                    כניסה
+                </button>
+                <p id="error-message" class="text-red-500 text-sm hidden">סיסמה שגויה, נסה שוב.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content (Protected) -->
+    <div id="protected-content">
+        <!-- Hero Section -->
+        <header class="gradient-bg text-white py-16 px-4">
+            <div class="max-w-6xl mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Битва Моллов Бухареста</h1>
+                <p class="text-xl text-blue-200 mb-8">Детальное сравнение Băneasa Shopping City и Mega Mall</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#comparison" class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full font-semibold transition">Сравнить бренды</a>
+                    <a href="#summary" class="bg-white/10 hover:bg-white/20 px-8 py-3 rounded-full font-semibold transition">Итоговый вывод</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Quick Info Cards -->
+        <section class="max-w-6xl mx-auto px-4 -mt-10 mb-16">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-yellow-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-2xl font-bold">Băneasa Shopping City</h2>
+                        <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mall-badge-baneasa">Премиум</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Самый статусный молл Румынии. Идеален для тех, кто ищет эксклюзивные бренды и деликатесы.</p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Уникальные бренды (Michael Kors, Victoria's Secret)</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Лучший выбор деликатесов в Carrefour</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Нишевая парфюмерия и бутики</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-red-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-2xl font-bold">Mega Mall</h2>
+                        <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mall-badge-mega">Масс-маркет</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Просторный и современный. Лучший выбор для повседневного шопинга и спортивных товаров.</p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Огромные C&A и New Yorker</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Большой выбор спортивной обуви</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Доступные цены и удобная навигация</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table Section -->
+        <section id="comparison" class="max-w-6xl mx-auto px-4 py-12">
+            <h2 class="text-3xl font-bold text-center mb-12">Сравнение по категориям</h2>
+            
+            <div class="overflow-x-auto bg-white rounded-2xl shadow-lg">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="p-6 text-gray-500 font-semibold uppercase text-sm">Категория</th>
+                            <th class="p-6 text-yellow-700 font-bold text-lg">Băneasa Shopping City</th>
+                            <th class="p-6 text-red-700 font-bold text-lg">Mega Mall</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100">
+                        <!-- Одежда -->
+                        <tr class="bg-blue-50/30">
+                            <td colspan="3" class="p-4 font-bold text-blue-800 uppercase text-xs tracking-widest">1. Магазины одежды</td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-semibold bg-gray-50/50">Универмаги</td>
+                            <td class="p-6">Peek & Cloppenburg (Премиум)</td>
+                            <td class="p-6">Peek & Cloppenburg, C&A</td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-semibold bg-gray-50/50">Inditex</td>
+                            <td class="p-6">Zara, Massimo Dutti, Bershka, Pull&Bear, Stradivarius, Oysho, Zara Home</td>
+                            <td class="p-6">Zara, Bershka, Pull&Bear, Stradivarius</td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-semibold bg-gray-50/50">Премиум</td>
+                            <td class="p-6">Michael Kors, Max Mara, Pinko, Hugo Boss, Armani Exchange, Diesel</td>
+                            <td class="p-6">Guess, Tommy Hilfiger, Lacoste, Marc O'Polo (меньше выбор)</td>
+                        </tr>
+                        <!-- Обувь -->
+                        <tr class="bg-blue-50/30">
+                            <td colspan="3" class="p-4 font-bold text-blue-800 uppercase text-xs tracking-widest">2. Обувь и аксессуары</td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-semibold bg-gray-50/50">Кожа и стиль</td>
+                            <td class="p-6">Musette (люкс), Il Passo, Humanic, Geox, Aldo</td>
+                            <td class="p-6">Anna Cori, Benvenuti, CCC, Deichmann, Salamander</td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-semibold bg-gray-50/50">Спорт</td>
+                            <td class="p-6">Nike, Under Armour, Sport Loft, Buzz</td>
+                            <td class="p-6">Foot Locker, Sizeer, Hervis, Decathlon (рядом)</td>
+                        </tr>
+                        <!-- Косметика -->
+                        <tr class="bg-blue-50/30">
+                            <td colspan="3" class="p-4 font-bold text-blue-800 uppercase text-xs tracking-widest">3. Косметика и Красота</td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-semibold bg-gray-50/50">Красота</td>
+                            <td class="p-6">Sephora, Douglas, MAC, Rituals + Бутики Chanel/Dior</td>
+                            <td class="p-6">Sephora, Douglas, Yves Rocher, Sabon</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Verdict Section -->
+        <section id="summary" class="bg-gray-900 text-white py-20 px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12">Что выбрать именно вам?</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold text-yellow-400">Езжайте в Băneasa, если:</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="bg-yellow-400/20 p-2 rounded mr-4"><i class="fas fa-gem text-yellow-400"></i></span>
+                                <p>Вы ищете премиальные бренды и эксклюзивные коллекции.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-yellow-400/20 p-2 rounded mr-4"><i class="fas fa-wine-glass text-yellow-400"></i></span>
+                                <p>Вам нужны редкие деликатесы или нишевая парфюмерия.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-yellow-400/20 p-2 rounded mr-4"><i class="fas fa-star text-yellow-400"></i></span>
+                                <p>Вам важен статус места и спокойная атмосфера премиум-класса.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold text-red-400">Езжайте в Mega Mall, если:</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="bg-red-400/20 p-2 rounded mr-4"><i class="fas fa-tag text-red-400"></i></span>
+                                <p>Вы предпочитаете доступный масс-маркет (C&A, New Yorker, Sinsay).</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-red-400/20 p-2 rounded mr-4"><i class="fas fa-running text-red-400"></i></span>
+                                <p>Ваша цель — большой выбор кроссовок и спортивного инвентаря.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-red-400/20 p-2 rounded mr-4"><i class="fas fa-shopping-cart text-red-400"></i></span>
+                                <p>Вам нужен огромный гипермаркет с выгодными предложениями.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-black text-gray-500 py-8 text-center text-sm">
+            <p>&copy; 2024 Гид по шопингу в Бухаресте. Все данные актуальны на основе вашего запроса.</p>
+        </footer>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const passwordInput = document.getElementById('password-input').value;
+            const errorMsg = document.getElementById('error-message');
+            const loginScreen = document.getElementById('login-screen');
+            const protectedContent = document.getElementById('protected-content');
+
+            // The password you requested
+            if (passwordInput === '022026') {
+                loginScreen.style.display = 'none';
+                protectedContent.style.display = 'block';
+                errorMsg.classList.add('hidden');
+            } else {
+                errorMsg.classList.remove('hidden');
+                document.getElementById('password-input').value = '';
+            }
+        }
+
+        // Allow pressing Enter key to submit
+        document.getElementById('password-input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+    </script>
+
+</body>
+</html>
